@@ -1,22 +1,13 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
+import express from 'express'
+import { generateUploadURL } from './s3.js'
 
 const app = express()
-const hostname = 'ec2-54-183-185-247.us-west-1.compute.amazonaws.com/';
-const port = 8080;
 
-app.listen(port, () => {
-  console.log(`Server running on port: ${port}`);
-});
+app.use(express.static('front'))
 
-app.get('/', (req, res) => {
-    res.send(`
-        <p>Home</p>
-    `)
+app.get('/s3Url', async (req, res) => {
+  const url = await generateUploadURL()
+  res.send({url})
 })
 
-app.use((req, res) => {
-    res.send('404')
-})
+app.listen(8080, () => console.log("listening on port 8080"))
