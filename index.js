@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 
 const app = express()
 
-app.listen(3020, () => {
-    console.log('Running on 3020')
+app.listen(8080, () => {
+    console.log('Running on 8080')
 })
 
 app.get('/', (req, res) => {
