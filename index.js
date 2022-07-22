@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 const app = express()
 const hostname = 'ec2-54-183-185-247.us-west-1.compute.amazonaws.com/';
-const port = 80;
+const port = 8080;
 
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
