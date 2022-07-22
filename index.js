@@ -4,10 +4,12 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const app = express()
+const hostname = 'ec2-54-183-185-247.us-west-1.compute.amazonaws.com/';
+const port = 80;
 
-app.listen(8080, () => {
-    console.log('Running on 8080')
-})
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
 
 app.get('/', (req, res) => {
     res.send(`
