@@ -5,7 +5,9 @@ const bodyParser = require('body-parser');
 
 const app = express()
 
-app.listen(8080)
+app.listen(3020, () => {
+    console.log('Running on 3020')
+})
 
 app.get('/', (req, res) => {
     res.send(`
