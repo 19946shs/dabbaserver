@@ -38,7 +38,7 @@ app.get('/api/s3Url', async (req, res) => {
 app.use('/api/users', UserRoute)
 app.use('/api/folders', FolderRoute)
 
-module.exports = app;
+export default app;
 module.exports.handler = serverless(app);
 
 // app.listen(8080, () => console.log("listening on port 8080"))
