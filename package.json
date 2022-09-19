@@ -5,6 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build": "netlify-lambda build express ",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,6 +19,10 @@
     "express": "^4.18.1",
     "mongoose": "^6.4.4",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.19"
+    "netlify-cli": "^11.8.0",
+    "netlify-lambda": "^2.0.15",
+    "nodemon": "^2.0.19",
+    "serverless": "^3.22.0",
+    "serverless-http": "^3.0.2"
   }
 }
