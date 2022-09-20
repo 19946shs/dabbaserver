@@ -1,12 +1,12 @@
-import express from 'express'
-import { generateUploadURL } from './s3.js'
-import cors from 'cors'
-import mongoose from 'mongoose'
-import dotenv from 'dotenv'
-import UserRoute from './routes/user.js'
-import FolderRoute from './routes/folder.js'
-import bodyParser from 'body-parser'
-import serverless from 'serverless-http';
+const express = require('express');
+// const { generateUploadURL } = require('./s3');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const UserRoute = require('./routes/user');
+const FolderRoute = require('./routes/folder');
+const bodyParser = require('body-parser');
+const serverless = require('serverless-http');
 
 dotenv.config()
 const app = express()
@@ -31,14 +31,14 @@ app.use(cors({
 }))
 
 app.get('/api/s3Url', async (req, res) => {
-  const url = await generateUploadURL()
+  // const url = await generateUploadURL()
   res.send({url})
 })
 
 app.use('/api/users', UserRoute)
 app.use('/api/folders', FolderRoute)
 
-export default app;
+module.exports = app;
 module.exports.handler = serverless(app);
 
 // app.listen(8080, () => console.log("listening on port 8080"))

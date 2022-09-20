@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema
 
@@ -17,4 +17,4 @@ const folderSchema = new Schema({
     }
 }, { collection : 'dabba' })
 
-export default mongoose.model('folder', folderSchema, 'folder')
+module.exports = mongoose.model('folder', folderSchema, 'folder')
