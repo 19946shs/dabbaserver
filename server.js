@@ -41,7 +41,7 @@ app.use(`/.netlify/functions/server/api/folders`, FolderRoute);
 // app.use('/api/users', UserRoute)
 // app.use('/api/folders', FolderRoute)
 
-app.listen(8080, () => console.log("listening on port 8080"))
+// app.listen(8080, () => console.log("listening on port 8080"))
 
 module.exports = app;
 module.exports.handler = serverless(app);
