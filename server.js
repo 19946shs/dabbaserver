@@ -35,8 +35,8 @@ app.get('/api/s3Url', async (req, res) => {
   res.send({url})
 })
 
-app.use(`/.netlify/functions/server/api/users`, UserRoute);
-app.use(`/.netlify/functions/server/api/folders`, FolderRoute);
+app.use(`/api/users`, UserRoute);
+app.use(`/api/folders`, FolderRoute);
 
 // app.use('/api/users', UserRoute)
 // app.use('/api/folders', FolderRoute)
