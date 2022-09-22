@@ -54,21 +54,20 @@ module.exports = {
     },
 
     updateFolder: async (req, res, next) => {
-        console.log('FOLDER UPDATION :: ', req.body);
         res.json({
             message: 'Folder updated'
         })
-        // Folder.findOneAndUpdate({ id: req.body.id }, req.body.data)
-        //     .then(response => {
-        //         res.json({
-        //             message: 'Folder updated'
-        //         })
-        //     })
-        //     .catch(error => {
-        //         res.json({
-        //             message: `Error occored: ${error}`
-        //         })
-        //     })
+        Folder.findOneAndUpdate({ id: req.body.id }, req.body)
+            .then(response => {
+                res.json({
+                    message: 'Folder updated'
+                })
+            })
+            .catch(error => {
+                res.json({
+                    message: `Error occored: ${error}`
+                })
+            })
     },
 
 }
